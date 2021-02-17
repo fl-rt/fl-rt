@@ -1,0 +1,17 @@
+name: fl_rt
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  archive:
+  args:
+  common:
+    path: ../common
+  meta:
+  yaml:
+
+executables:
+  fl-rt: tool

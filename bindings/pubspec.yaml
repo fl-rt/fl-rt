@@ -1,0 +1,29 @@
+name: fl_rt_bindings
+version: 0.0.1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dev_dependencies:
+  ffigen:
+    git:
+      url: https://github.com/dart-lang/ffigen
+      ref: dart-dev
+
+ffigen:
+  llvm-lib: '/usr/lib'
+  compiler-opts: '-I/usr/lib/clang/13.0.0/include/'
+  output: 'lib/generated.dart'
+  name: 'FlutterEmbedderBindings'
+  description: 'Bindings for the flutter engine'
+  array-workaround: true
+  comments: false
+  macros:
+    rename:
+      '_+(.*)': '$1'
+  structs:
+    rename:
+      '_+(.*)': '$1'
+  headers:
+    entry-points:
+      - 'embedder.h'
